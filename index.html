@@ -2,11 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
+		<script src="jquery-1.10.2.min.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
 		<script type="text/javascript">
-			document.write(returnCitySN["cip"])
+			$.get("https://api.ipify.org/?format=json",function(data,status){
+				alert("数据: " + data + "\n状态: " + status);
+			});
+			<!--document.write(returnCitySN["cip"])-->
 		</script>
 	</body>
 </html>
