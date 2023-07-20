@@ -5,11 +5,19 @@
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript">
-			$.get("https://api.ipify.org/?format=json",function(data,status){
-				alert("数据: " + data + "\n状态: " + status);
+		<div id="divCustomers"></div>
+		<script>
+			$.getJSON("https://api.ipify.org/?format=json", function(data) {
+				
+				var html = '<ul>';
+				for(var i = 0; i < data.length; i++)
+				{
+					html += '<li>' + data[i] + '</li>';
+				}
+				html += '</ul>';
+				
+				$('#divCustomers').html(html); 
 			});
-			
 		</script>
 	</body>
 </html>
